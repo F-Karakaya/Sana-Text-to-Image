@@ -10,7 +10,6 @@ Project structure containing our additions:
 ```text
 Sana-Text-to-Image/                  # main repo
 │── sana_text2img.py                 # standalone text-to-image inference script (ours)
-│── sana-512px-output.png            # sample output generated using the script (ours)
 │── ...                              # original repository files
 ```
 
