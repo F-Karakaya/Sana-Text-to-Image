@@ -39,7 +39,7 @@ You can modify the text prompt directly inside the script.
 Below is the minimal working part you will interact with:
 
 ```text
-prompt = 'a cyberpunk cat with a glowing neon sign that says "Sana"'
+prompt = 'A two-headed cyberpunk cat with a bright neon sign that reads ‘Sana’'
 
 image = pipeline(
     prompt=prompt,
@@ -60,9 +60,7 @@ save_image(image, "sana-512px-output.png", nrow=1, normalize=True, value_range=(
 
 Generated using the above prompt:
 
-<p align="center">
-  <img src="sana-512px-output.png" width="45%" />
-</p>
+<img width="512" height="512" alt="sana-512px-output" src="https://github.com/user-attachments/assets/7b01c01a-0127-4e98-a8d8-779c4f1e74f0" />
 
 This demonstrates the successful execution of text-to-image inference with the added script.
 
