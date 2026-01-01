@@ -1,3 +1,77 @@
+# Text-to-Image Inference Extension (Our Contribution)
+
+This repository has been forked and extended to include a standalone **Text-to-Image inference script** that enables direct image generation using **SanaPipeline** without requiring external frameworks.  
+The new script allows users to provide a text prompt and produce images locally, saving outputs directly into the root directory.
+
+## Added Files
+
+Project structure containing our additions:
+
+```text
+Sana-Text-to-Image/                  # main repo
+│── sana_text2img.py                 # standalone text-to-image inference script (ours)
+│── sana-512px-output.png            # sample output generated using the script (ours)
+│── ...                              # original repository files
+```
+
+### What We Implemented
+
+- Added an easy-to-use **sana_text2img.py** for inference execution.
+- Generates a 512px sample image from text prompts.
+- Saves generated images automatically to root directory.
+- Provides a minimal reproducible workflow for local inference.
+
+---
+
+## How to Run Our Text-to-Image Script
+
+1. Place your model config and checkpoint paths inside the script.
+2. Run the script with Python.
+3. Generated image will appear under the project root.
+
+Usage example:
+
+```bash
+python sana_text2img.py
+```
+
+You can modify the text prompt directly inside the script.  
+Below is the minimal working part you will interact with:
+
+```text
+prompt = 'a cyberpunk cat with a glowing neon sign that says "Sana"'
+
+image = pipeline(
+    prompt=prompt,
+    height=512,
+    width=512,
+    guidance_scale=5.0,
+    pag_guidance_scale=2.0,
+    num_inference_steps=18,
+    generator=generator,
+)
+
+save_image(image, "sana-512px-output.png", nrow=1, normalize=True, value_range=(-1, 1))
+```
+
+---
+
+## Example Output
+
+Generated using the above prompt:
+
+<p align="center">
+  <img src="sana-512px-output.png" width="45%" />
+</p>
+
+This demonstrates the successful execution of text-to-image inference with the added script.
+
+---
+
+<!-- ========================================================= -->
+<!-- ORIGINAL SANA README (UNCHANGED BELOW)                 -->
+<!-- ========================================================= -->
+
 <p align="center" style="border-radius: 10px">
   <img src="asset/logo.png" width="35%" alt="logo"/>
 </p>
