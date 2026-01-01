@@ -16,7 +16,11 @@
 
 # This file is copied from https://github.com/NVlabs/VILA/tree/main/llava/wids
 import collections
-import fcntl
+try:
+    import fcntl
+except ImportError:
+    fcntl = None
+
 import io
 import mmap
 import os
